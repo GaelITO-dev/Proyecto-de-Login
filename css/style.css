@@ -1,0 +1,56 @@
+body.login-page {
+   background: 
+        url('../img/fondo.jpg');    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+
+.login-card {
+    width: 100%;
+    max-width: 440px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.25);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 1rem 3rem rgba(24, 36, 58, 0.12) !important;
+}
+
+.login-card .card-title {
+    color: #18243a;
+    font-size: clamp(1.75rem, 5vw, 2rem);
+    transform: translateY(-15px);
+}
+
+.login-card .form-control {
+    min-height: 3rem;
+    background-color: transparent !important;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.8) !important;
+    border-radius: 0;
+    padding-left: 0;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+.login-card .form-control::placeholder {
+    color: rgba(0, 0, 0, 0.6); 
+}
+
+.form-control:focus {
+    background-color:transparent !important;
+    border: none;
+    border-bottom: 2px solid #ffffff !important;
+    box-shadow: none;
+    color: #ffffff !important;
+}
+
+.login-card .btn {
+    min-height: 3rem;
+}
+
+
