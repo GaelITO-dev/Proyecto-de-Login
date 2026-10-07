@@ -1,0 +1,35 @@
+/* css/navbar.css */
+
+/* Contenedor principal con efecto cristal (glassmorphism) */
+.glass-navbar {
+    background: rgba(255, 255, 255, 0.1) !important;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    z-index: 1030;
+}
+
+/* Título de la marca y enlaces de navegación */
+.glass-navbar .navbar-brand,
+.glass-navbar .nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Efecto hover al pasar el ratón por los enlaces */
+.glass-navbar .nav-link:hover,
+.glass-navbar .nav-link:focus {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Borde del botón desplegable en dispositivos móviles */
+.glass-navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Ícono de hamburguesa en blanco para que resalte */
+.glass-navbar .navbar-toggler-icon {
+    filter: invert(1);
+}
