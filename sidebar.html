@@ -1,3 +1,5 @@
+<!--DOCUMENTO HTML QUE SERVIRÁ PARA PRUEBA VISUAL DE LAS DIVERSAS MODIFICACIONES QUE SE LE HAGAN AL SLIDEBAR-->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,6 +17,10 @@
 <body>
 
   <h1>Sidebar</h1>
+  <button class="btn-menu" aria-expanded="false" aria-label="Abrir menú">
+    <i class="bi bi-list"></i>
+  </button>
+
   <aside class="contenedor-principal">
 
     <div class="perfil">
@@ -41,6 +47,18 @@
     </nav>
 
   </aside>
+
+
+
+  <script>
+    const btn = document.querySelector('.btn-menu');
+    const sidebar = document.querySelector('.contenedor-principal');
+
+    btn.addEventListener('click', () => {
+      const abierto = sidebar.classList.toggle('activo');
+      btn.setAttribute('aria-expanded', abierto);
+    });
+  </script>
 
 </body>
 </html>
