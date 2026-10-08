@@ -1,104 +1,72 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    min-height: 100vh;
-    font-family: 'Poppins', sans-serif;
+/* ---------- Botón hamburguesa ---------- */
+.btn-menu {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    z-index: 1050;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     color: #fff;
-
-    background-image: url("https://imgs.search.brave.com/f_epgZW2zXX06tKV7wZkg2mB4OhF91E9AdLQDwvYqKs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L3ZlY3Rvci1ncmF0/aXMvZm9uZG8tYXp1/bC1hYnN0cmFjdG9f/Njk4NDUyLTI3NjEu/anBnP3NlbXQ9YWlz/X2h5YnJpZCZ3PTc0/MCZxPTgw");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* ---------- Contenedor del sidebar ---------- */
 .contenedor-principal {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     width: 230px;
-    height: 500px;
-    padding:12px;
+    height: auto;
+    padding: 12px;
     border-radius: 15px;
     box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
 
-    background-color: rgba(255, 255, 255, 0.06);
+    background-color: rgba(0, 0, 0, 0.35);
     border: 1px solid rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 
-    position: fixed;                               /* nuevo */
-    top: 70px;                                     /* nuevo */
-    left: 20px;                                    /* nuevo */
-    transform: translateX(calc(-100% - 20px));     /* nuevo: escondido a la izquierda */
-    transition: transform 0.3s ease;               /* nuevo */
-    z-index: 900; 
+    position: fixed;
+    top: 150px;
+    left: 20px;
+    transform: translateX(calc(-100% - 20px));
+    transition: transform 0.3s ease;
+    z-index: 1045;
 }
 
 .contenedor-principal.activo {
     transform: translateX(0);
 }
 
-
-.btn-menu {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
-    width: 40px;
-    height: 40px;
-    border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    color: #fff;
-    font-size: 1.4rem;
-    cursor: pointer;
-}
-
-/* ---------- Cabecera de perfil ---------- */
-.perfil {
+/* ---------- Cabecera ---------- */
+.contenedor-principal .perfil {
     display: flex;
     align-items: center;
-    gap: 14px;
     padding: 18px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.35);
     border-bottom: 1px solid rgba(255, 255, 255, 0.35);
     margin-bottom: 24px;
 }
 
-.avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: #111;
-    flex-shrink: 0;
-}
-
-.perfil-info {
-    display: flex;
-    flex-direction: column;
-    flex: 1;               /* empuja la flecha hacia la derecha */
-}
-
-.nombre {
-    font-size: 1rem;
+.titulo-opciones {
+    font-size: 1.1rem;
     font-weight: 400;
 }
 
-.cuenta {
-    font-size: 0.75rem;
-    font-weight: 300;
-    opacity: 0.75;
-}
-
-/* ---------- Etiqueta MENU ---------- */
-.etiqueta {
+/* ---------- Etiquetas ---------- */
+.contenedor-principal .etiqueta {
     font-size: 0.8rem;
     font-weight: 300;
     letter-spacing: 1px;
@@ -106,14 +74,18 @@ body {
     margin-bottom: 14px;
 }
 
+.contenedor-principal .etiqueta-links {
+    margin-top: 24px;
+}
+
 /* ---------- Opciones ---------- */
-.menu {
+.contenedor-principal .menu {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
-.menu a {
+.contenedor-principal .menu a {
     display: flex;
     align-items: center;
     gap: 22px;
@@ -126,15 +98,104 @@ body {
     transition: background 0.2s;
 }
 
-.menu a i {
+.contenedor-principal .menu a i {
     font-size: 1.3rem;
-    width: 22px;           /* iconos alineados */
+    width: 22px;
 }
 
-.menu a:hover {
+.contenedor-principal .menu a:hover {
     background: rgba(255, 255, 255, 0.12);
 }
 
-.perfil i:hover {
+/* ---------- Usuarios (desplegable) ---------- */
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    width: 100%;
+    padding: 14px 8px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 300;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.menu-toggle i {
+    font-size: 1.3rem;
+    width: 22px;
+}
+
+.menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.flecha-sub {
+    margin-left: auto;
+    font-size: 0.9rem !important;
+    transition: transform 0.2s;
+}
+
+.menu-toggle[aria-expanded="true"] .flecha-sub {
+    transform: rotate(180deg);
+}
+
+.submenu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 8px 12px 8px;
+}
+
+.submenu.abierto {
+    display: flex;
+}
+
+.btn-captura {
+    width: 85%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 300;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-captura:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* ---------- Links recientes ---------- */
+.links-recientes {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.links-recientes a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 8px;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 300;
+    transition: background 0.2s;
+}
+
+.links-recientes a:hover {
     background: rgba(255, 255, 255, 0.12);
 }
