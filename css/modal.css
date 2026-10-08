@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+  
+    background-image: url("https://imgs.search.brave.com/UXg_LLjQdQx73egC-T2L59EKpjgEfAT3Tp6F6yIDwpE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L2ZvdG8tZ3JhdGlz/L3BhaXNhamUtbHVu/YS1hbmltZV8yMy0y/MTUxNjQ1OTA1Lmpw/Zz9zZW10PWFpc19o/eWJyaWQmdz03NDAm/cT04MA");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/*=======================EFECTOS PARA EL MODAL===========================================*/
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);   /* menos opaco para que se note el blur */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.modal-contenido {
+    background: rgba(255, 254, 254, 0.121);
+    padding: 24px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    backdrop-filter: blur(12px);       
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.modal.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.modal-botones {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.modal-botones button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #2d22ff;
+    color: #fff;
+    cursor: pointer;
+}
+
