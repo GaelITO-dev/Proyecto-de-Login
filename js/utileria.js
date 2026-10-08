@@ -19,10 +19,9 @@ export const validarCorreo = (correo) =>{
     numeros y simbolos sin espacio siempre y cuando sea antes del "@" como en los correos reales   
     */
     const estructura = /^[0-9]+@itoaxaca\.edu\.mx$/;
-    const estructura2 = /^[a-z0-9._%+-]+@gmail\.com$/;
 
     //se compara el correo con la extructura admitida por la expresion regular, si no se cumple retorna false
-    if(estructura.test(correo)==false && estructura2.test(correo)==false)return false;
+    if(estructura.test(correo)==false)return false;
 
     //si las condiciones anteriores no se cumplen retornamos un true indicando que el correo es valido
     return true;
@@ -170,28 +169,11 @@ export function validarUsername(nombreUsuario) {
     */
 
     if (typeof nombreUsuario !== "string") return false;
+    console.log("esto si se evalua")
+    const regex = /^[0-9]{8}$/;
 
-    if (nombreUsuario.length < 5) return false;
-    let tieneMayuscula = false;
-    let tieneMinuscula = false;
-    let tieneNumero = false;
-
-    for (let i = 0; i < nombreUsuario.length; i++) {
-        const posicion = nombreUsuario[i];   // el carácter en la posición i
-
-        //Uso de codigo ASCII para saber si cumple contiene los caracteres específicos
-        if (posicion >= "A" && posicion <= "Z") {
-            tieneMayuscula = true;
-        } else if (posicion >= "a" && posicion <= "z") {
-            tieneMinuscula = true;
-        } else if (posicion >= "0" && posicion <= "9") {
-            tieneNumero = true;
-        } else if (posicion === " ") {          //Si el usuario incluyó un espacio en su nombre directamente retorna false
-            return false;             
-        } 
-    }
     //console.log("Si hace esto")
-    return tieneMayuscula && tieneMinuscula && tieneNumero;
+    return regex.test(nombreUsuario);
 };
 
 
