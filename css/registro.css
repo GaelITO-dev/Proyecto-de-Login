@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+
+    background-color: #f3f4f6;  /* color de respaldo si la imagen no carga */
+    background-image: url("../img/fondo4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.formulario {
+    width: 520px;
+    padding: 24px;
+    color: #ffffff;               /* nuevo: ver abajo */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+label { display: block; margin-bottom: 4px; }
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.mensaje-error {
+    color: rgba(255, 254, 254, 0.5);
+    font-size: 0.85rem;
+    min-height: 1.2em;
+    margin: 4px 0 8px;
+}
+
+.indica {
+    color: rgba(255, 254, 254, 0.5);
+    font-size: 0.85rem;
+    min-height: 1.2em;
+    margin: 4px 0 8px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #2d22ff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#registro{
+    text-align: center;
+}
+
+.boton-Login,
+.boton-Login:visited {
+    color: #f5f7f8df;
+    text-decoration: none;
+    text-decoration: underline;
+}
+
