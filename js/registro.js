@@ -24,7 +24,6 @@ import { crearModal } from './modal.js';
             mensaje: "Debes ser mayor de 18 años para continuar.",
             textoBoton: "Entendido"
         });
-
         /*=================================SEGUIMIENTO DEL FORMULARIO=============================================*/
         formulario.addEventListener("submit", evento => {
 
@@ -140,13 +139,47 @@ import { crearModal } from './modal.js';
                 modalEdad.ocultar();
             }
 
-            //===================RESULTADO FINAL=======================
+             //===================RESULTADO FINAL=======================
             if (todoValido == false) {
-                evento.preventDefault(); // solo cancelamos el envío si algo falló
+                evento.preventDefault(); // cancelamos el envío si algo falló
             } else {
-                //Originalmente se pensó para que tuviera un alert
-                alert("Exito");
-                // sin preventDefault aquí, el formulario sigue su curso normal y se envía
+                evento.preventDefault(); 
+
+                // 1. Creamos el objeto con los datos
+                const nuevoUsuario = {
+                    username: inputUser.value.trim(),
+                    email: inputemail.value.trim(),
+                    numero: inputNum.value.trim(),
+                    fechaNacimiento: inputFecha.value,
+                    password: inputContra.value,
+                    descripcion: inputdesc.value.trim()
+                };
+
+                // 2. Traemos la base de datos local
+                let usuariosRegistrados = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+                // 3. Verificamos ÚNICAMENTE si el correo ya existe
+                const correoExiste = usuariosRegistrados.find(
+                    (user) => user.email === nuevoUsuario.email
+                );
+
+                if (correoExiste) {
+                    // Si el correo ya está registrado, mostramos el error en la interfaz y detenemos el proceso
+                    mensajeError1.style.color = "red";
+                    mensajeError1.textContent = "Este correo electrónico ya está registrado.";
+                    return; 
+                }
+
+                // 4. Si el correo es nuevo, guardamos el usuario
+                usuariosRegistrados.push(nuevoUsuario);
+                localStorage.setItem("usuarios", JSON.stringify(usuariosRegistrados));
+
+                // 5. Iniciamos sesión con el nombre proporcionado (aunque se repita con otros, será el de esta sesión)
+                localStorage.setItem("usuarioActivo", nuevoUsuario.username);
+
+                // 6. Notificamos y redirigimos
+                alert("¡Registro exitoso! Bienvenido " + nuevoUsuario.username);
+               // window.location.href = "index.html"; 
             }
 
         });
