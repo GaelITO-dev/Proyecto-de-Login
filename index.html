@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+</head>
+<body class="bg-main">
+
+    <!-- Navbar (lo inyecta js/navbar.js) -->
+    <div id="navbar-container"></div>
+
+    <!-- Sidebar -->
+    <button class="btn-menu" aria-expanded="false" aria-label="Abrir menú">
+        <i class="bi bi-list"></i>
+    </button>
+
+    <aside class="contenedor-principal">
+
+        <div class="perfil">
+            <span class="titulo-opciones">Opciones</span>
+        </div>
+
+        <span class="etiqueta">MENU</span>
+
+        <nav class="menu">
+            <a href="#"><i class="bi bi-envelope-fill"></i> Mensajes</a>
+            <a href="#"><i class="bi bi-people"></i> Amigos</a>
+
+            <button class="menu-toggle" type="button" aria-expanded="false">
+                <i class="bi bi-person-fill"></i> Usuarios
+                <i class="bi bi-chevron-down flecha-sub"></i>
+            </button>
+            <div class="submenu">
+                <button class="btn-captura" type="button" onclick="window.location.href='registro.html'">captura</button>
+                
+                <button class="btn-captura" type="button" onclick="window.location.href='registro.html'">Mostrar</button>
+            </div>
+        </nav>
+
+        <span class="etiqueta etiqueta-links">LINKS RECIENTES</span>
+
+        <nav class="links-recientes">
+            <a href="https://classroom.google.com/u/1/c/ODc0ODQyMDE3NjQ2/a/ODg2ODYzMzQ0OTIw/details?hl=es" target="_blank" ><i class="bi bi-mortarboard"></i> Classroom</a>
+            <a href="https://github.com/GaelITO-dev/Proyecto-de-Login.git" target="_blank" ><i class="bi bi-github"></i> GitHub</a>
+            <a href="https://www.youtube.com/?app=desktop&hl=es" target="_blank"><i class="bi bi-youtube"></i> YouTube</a>
+        </nav>
+
+    </aside>
+
+    <main class="container text-white" style="padding-top: 120px;">
+        <h1>Página Principal</h1>
+
+        <!-- Botones temporales para probar la sesión local
+         LO DEJO COMENTADO POR SI SE LLEGA A USAR EN EL FUTURO, PERO NO ES NECESARIO PARA EL FUNCIONAMIENTO DEL NAVBAR
+        <div class="mt-4 p-4 rounded" style="background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2);">
+            <h4>Panel de Pruebas de Sesión</h4>
+            <p>Usa estos botones para forzar el cambio en el menú:</p>
+            <button class="btn btn-success me-2" onclick="simularLogin()">Simular Login como Gael</button>
+            <button class="btn btn-outline-light" onclick="simularLogout()">Borrar Sesión</button>
+        </div>
+
+        <div style="margin-top: 50px;">
+            <p>Haz scroll hacia abajo para ver el menú flotante en forma de pastilla.</p>
+            <p style="margin-top: 400px;">El navbar se mantiene fijo y redondeado...</p>
+            <p style="margin-top: 400px;">Fin de la página de prueba.</p>
+        </div>
+         -->
+    </main>
+
+    <!-- Script principal del navbar -->
+    <script src="js/navbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script del sidebar -->
+    <script>
+        (() => {
+            const btn = document.querySelector('.btn-menu');
+            const sidebar = document.querySelector('.contenedor-principal');
+
+            btn.addEventListener('click', () => {
+                const abierto = sidebar.classList.toggle('activo');
+                btn.setAttribute('aria-expanded', abierto);
+            });
+
+            const toggle = document.querySelector('.menu-toggle');
+            const submenu = document.querySelector('.submenu');
+
+            toggle.addEventListener('click', () => {
+                const abierto = submenu.classList.toggle('abierto');
+                toggle.setAttribute('aria-expanded', abierto);
+            });
+        })();
+    </script>
+
+    <!-- Script temporal para los botones de prueba -->
+    <script>
+        function simularLogin() {
+            localStorage.setItem("usuarioActivo", "Gael");
+            window.location.reload();
+        }
+        function simularLogout() {
+            localStorage.removeItem("usuarioActivo");
+            window.location.reload();
+        }
+    </script>
+</body>
+</html>
