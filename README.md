@@ -33,7 +33,7 @@ Cuando se ingresa con el usuario creado, y sera redirigido al index.html, en est
 este dato se obtiene del local storage del navegador, cuando se hace el registro del usuario se almacena ahi de esta manera
 
 
-[Codigo de almacenamiento en el localStorage](registro.js)
+[Codigo de almacenamiento en el localStorage](js/registro.js)
 ```javascript
 if (todoValido == false) {
                 evento.preventDefault();
@@ -71,7 +71,7 @@ if (todoValido == false) {
 ```
 para poder traer el nombre del usuario al navbar
 
-[Codigo de del navbar.js que guarda el nombre del usuario](nabvar.js)
+[Codigo de del navbar.js que guarda el nombre del usuario](js/nabvar.js)
 
 ```
 const nombreUsuario = document.getElementById("nombre-usuario");
