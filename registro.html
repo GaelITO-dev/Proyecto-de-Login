@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/registro.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <title>Registro</title>
+    
+</head>
+
+
+<body>
+    <h1><code>Registro</code></h1>
+    
+   
+
+    <form class="formulario" id="formulario">
+        
+
+        <div>
+            <label for="email">Nombre de Usuario:</label>
+            <p class="indica">Mayor o igual a 5 caracteres, minimo un numero, una mayuscula y una minuscula</p>
+            <input type="text" id="username" placeholder="Escribe un nombre de usuario">
+            <p id="mensaje-error6" class="mensaje-error"></p>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <p class="indica">un correo de dominio gmail o institucional</p>
+            <input type="text" id="email" placeholder="Escribe tu email">
+            <p id="mensaje-error1" class="mensaje-error"></p>
+        </div>
+        
+
+        <div>
+            <label for="numero">Numero:</label>
+            <p class="indica">Debe ser un número de 10 dígitos</p>
+            <input type="text" id="numero" placeholder="Ej: 9512923871">
+            <p id="mensaje-error3" class="mensaje-error"></p>
+        </div>
+
+        <div>
+            <label for="edad">Fecha de nacimiento:</label>
+            <p class="indica">Escoge tu fecha de nacimiento en el calendario</p>
+            <input type="date" id="edad" placeholder="AAAA-MM-DD">
+            <p id="mensaje-error4" class="mensaje-error"></p>
+        </div>
+
+        <div>
+            <label for="contra">Contraseña:</label>
+            <p class="indica">Ingresa una contraseña con 8 o más caracteres, minimo una mayuscula, una minuscula, un numero y un caracter especial, NO ESPACIOS</p>
+            <input type="password" id="contra" placeholder="Escribe una contraseña">
+            <p id="mensaje-error5" class="mensaje-error"></p>
+        </div>
+
+        <div>
+            <label for="contra">Confirmar contraseña:</label>
+            <input type="password" id="contra2" placeholder="Escribe nuevamente tu contraseña">
+            <p id="mensaje-error7" class="mensaje-error"></p>
+        </div>
+
+        <div>
+            <label for="desc">Descripción:</label>
+            <p class="indica">Escribe una descripción sobre ti, solo letras y espacios</p>
+            <input type="text" id="desc">
+            <p id="mensaje-error2" class="mensaje-error"></p>
+        </div>
+
+        <button type="submit">Enviar</button>
+
+        <div id="registro">
+            <br>
+            <a href="login.html" class="boton-Login">Login</a>
+        </div>
+
+    </form>
+    
+
+    <script type="module" src="js/registro.js"></script>
+</body>
+</html>
