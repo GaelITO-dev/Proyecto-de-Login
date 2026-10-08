@@ -71,7 +71,7 @@ if (todoValido == false) {
 ```
 para poder traer el nombre del usuario al navbar
 
-[Codigo de del navbar.js que guarda el nombre del usuario](js/nabvar.js)
+[Codigo de del navbar.js que guarda el nombre del usuario](js/navbar.js)
 
 ```
 const nombreUsuario = document.getElementById("nombre-usuario");
